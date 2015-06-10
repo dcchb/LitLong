@@ -1,25 +1,777 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YM5-nb-fhY">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="c25-1n-sHU">
+            <objects>
+                <viewController id="YM5-nb-fhY" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3SW-Se-BaN"/>
+                        <viewControllerLayoutGuide type="bottom" id="9j1-vd-Mwl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GWP-Ev-OFw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <segue destination="KT9-q1-Jv0" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="lRg-vq-Nm7"/>
+                        <segue destination="T8N-Fa-m7t" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="nLV-L7-lpc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJJ-QN-6uG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-614" y="281"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="3BL-uf-lnp">
+            <objects>
+                <tableViewController id="KT9-q1-Jv0" customClass="NavigationViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zrJ-ak-b6k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="first" textLabel="PBW-s1-kEU" style="IBUITableViewCellStyleDefault" id="Q78-Qf-5ea">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q78-Qf-5ea" id="NRr-1I-TuT">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="MapView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PBW-s1-kEU">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="custom" customClass="SWRevealViewControllerSegue" id="t02-on-mDH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="second" textLabel="S9r-iF-8tU" style="IBUITableViewCellStyleDefault" id="An7-xx-L5S">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="An7-xx-L5S" id="AwX-c6-rCY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="TextView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S9r-iF-8tU">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="GYs-vb-rBH" kind="custom" customClass="SWRevealViewControllerSegue" id="Ymx-lb-hwt"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="third" textLabel="PPY-0Z-Vcz" style="IBUITableViewCellStyleDefault" id="jiX-O4-orn">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jiX-O4-orn" id="ywG-FZ-wKd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Disclaimer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PPY-0Z-Vcz">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="oTE-kz-Y9j" kind="custom" customClass="SWRevealViewControllerSegue" id="U7k-SK-By6"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fourth" textLabel="z6B-W8-uXU" style="IBUITableViewCellStyleDefault" id="TaR-zP-lRn">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TaR-zP-lRn" id="4iL-AD-2gQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Credits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z6B-W8-uXU">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Y0n-P0-fwF" kind="custom" customClass="SWRevealViewControllerSegue" id="omf-I0-dhm"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fifth" textLabel="o73-ck-4Nh" style="IBUITableViewCellStyleDefault" id="3iW-ho-pKH">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3iW-ho-pKH" id="nBw-MQ-gby">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o73-ck-4Nh">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="oyR-Lp-koA" kind="custom" customClass="SWRevealViewControllerSegue" id="Igo-2y-Bze"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KT9-q1-Jv0" id="dMz-aF-P9c"/>
+                            <outlet property="delegate" destination="KT9-q1-Jv0" id="sS9-dm-e14"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoB-6i-nPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="-89"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="85k-dI-nhg">
+            <objects>
+                <navigationController id="T8N-Fa-m7t" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YDp-z5-nAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GYs-vb-rBH" kind="relationship" relationship="rootViewController" id="hMh-aw-lOz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LTu-tH-7NT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="563"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-oh-Osf">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="q3O-Bi-uCz"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Current Location" id="wPn-Gc-zWJ">
+                                        <connections>
+                                            <action selector="zoomToCurrentLocation:" destination="vXZ-lx-hvc" id="gDd-F0-w31"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VRQ-gZ-zMA"/>
+                                    <barButtonItem style="plain" id="fct-ec-T9i">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mKF-8T-iC0">
+                                            <rect key="frame" x="147" y="7" width="127" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Edinburgh centre">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="goToOtherPlace:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xap-qN-Puk"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4n-hk-qBM">
+                                <rect key="frame" x="16" y="64" width="304" height="372"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CBp-Ga-1Cv">
+                                <rect key="frame" x="95" y="401" width="209" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setMapType:" destination="vXZ-lx-hvc" eventType="valueChanged" id="JFo-gP-6XN"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cgf-oh-Osf" firstAttribute="top" secondItem="k4n-hk-qBM" secondAttribute="bottom" id="0uZ-XJ-jXP"/>
+                            <constraint firstItem="k4n-hk-qBM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="2Q8-Jd-zkL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k4n-hk-qBM" secondAttribute="trailing" constant="-16" id="Hgo-gA-Unk"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cgf-oh-Osf" secondAttribute="bottom" id="QXb-6I-WEO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cgf-oh-Osf" secondAttribute="trailing" constant="-16" id="Twp-Cp-RlI"/>
+                            <constraint firstItem="CBp-Ga-1Cv" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Xam-jI-0ph"/>
+                            <constraint firstItem="k4n-hk-qBM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="djl-OX-Jdz"/>
+                            <constraint firstItem="cgf-oh-Osf" firstAttribute="top" secondItem="CBp-Ga-1Cv" secondAttribute="bottom" constant="7" id="gtI-vv-e2k"/>
+                            <constraint firstItem="cgf-oh-Osf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="zq6-5w-OWg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4Mn-wp-lcA">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Jzi-Dg-mQ7"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="barButton" destination="Jzi-Dg-mQ7" id="DhI-av-tV0"/>
+                        <outlet property="mapView" destination="k4n-hk-qBM" id="NNa-f7-ftx"/>
+                        <outlet property="searchButton" destination="mKF-8T-iC0" id="f9P-f4-Ysd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="620" y="-1285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Kha-ex-6BF">
+            <objects>
+                <viewController id="oTE-kz-Y9j" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cfR-2p-BoS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rul-1t-tta"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OrW-KZ-Lca">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viJ-8V-azR">
+                                <rect key="frame" x="16" y="28" width="246" height="341"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Disclaimer:
+
+You use this app at your own risk. Please do not use while driving.
+
+Data used in this app is from a variety of sources and therefore comes with different licences assocated with them. Mostly out of copyright texts have been sourced.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="viJ-8V-azR" firstAttribute="top" secondItem="cfR-2p-BoS" secondAttribute="bottom" constant="8" id="oqD-Dd-wiD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1td-yt-fTr">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="a8n-qw-CRu"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="barButton" destination="a8n-qw-CRu" id="EJp-mc-auk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLs-NR-WYv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="-670"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Pac-aX-fqm">
+            <objects>
+                <viewController id="Y0n-P0-fwF" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nld-Z5-R3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="sKW-tZ-Nev"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rv1-Gg-Toq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11a-fF-ude">
+                                <rect key="frame" x="16" y="28" width="288" height="444"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Credits/Characters:
+
+The LitLong project was made by a team of specialists from the University of St Andrews, University of Edinburgh and EDINA, and made possible by the generous support of the AHRC.
+
+James Loxley: Head Honcho
+
+Jon Oberlander: Nomenclature Czar
+Aaron Quigley: Vizualisation Top Gun
+James Reid: Geo-Database Kingpin
+
+Beatrice Alex: Text-Mining Magician
+Miranda Anderson: Literary Ninja
+Ian Fieldhouse: Database Guru
+Claire Grover: Geo-Textual Whizz
+David Harris-Birtill: App Sorcerer
+Mark Haddon: Artistic Swashbuckler
+Uta Hinrichs: Visualisation Queen
+Nicola Osborne: Social Networking Chief
+Tara Thomson: Book Whisperer</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="11a-fF-ude" firstAttribute="trailing" secondItem="rv1-Gg-Toq" secondAttribute="trailingMargin" id="6Sn-rr-YX8"/>
+                            <constraint firstItem="sKW-tZ-Nev" firstAttribute="top" secondItem="11a-fF-ude" secondAttribute="bottom" constant="8" id="9h3-Ut-ENg"/>
+                            <constraint firstItem="11a-fF-ude" firstAttribute="leading" secondItem="rv1-Gg-Toq" secondAttribute="leadingMargin" id="CPM-rs-AJn"/>
+                            <constraint firstItem="11a-fF-ude" firstAttribute="top" secondItem="nld-Z5-R3C" secondAttribute="bottom" constant="8" id="aa7-OY-MY2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pmu-8f-bSH">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="jcH-c6-8rW"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="barButton" destination="jcH-c6-8rW" id="pc0-uI-nWl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5y-Z5-EQB" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-105"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IDR-cH-AgQ">
+            <objects>
+                <viewController id="oyR-Lp-koA" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jOY-Pp-9IU"/>
+                        <viewControllerLayoutGuide type="bottom" id="MPP-bh-jJg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1i6-eV-eyE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-gd-Sa3">
+                                <rect key="frame" x="16" y="28" width="288" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">About:
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+LitLong uses natural language processing technology, informed by literary scholars’ input, in order to text mine literary works set in Edinburgh and to visualise the results in accessible ways.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="What have we made?">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+We have created a very large database of place-name mentions in around 550 books that use Edinburgh as a setting. We have then extracted the text surrounding each mention and included that in our database. The data has then been mapped onto the city via the place-name mentions, and can be explored through a mobile app and two online visualisations. You can also search the database directly through the discovery interface here. In all of these interactions, you can walk your own path through the resonant locations of literary Edinburgh.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Why have we done it?">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Our aim in creating LitLong was to find out what the topography of a literary city such as Edinburgh would look like if we allowed digital reading to work on a very large body of texts. Edinburgh has a justly well-known literary history, cumulatively curated down the years by its many writers and readers. This history is visible in books, maps, walking tours and the city’s many literary sites and sights. But might there be other voices to hear in the chorus? Other, less familiar stories? By letting the computer do the reading, we’ve tried to set that familiar narrative of Edinburgh’s literary history in the less familiar context of hundreds of other works. We also want our maps and our app to illustrate old connections, and forge new ones, among the hundreds of literary works we’ve been able to capture.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="How did we do it?">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+To create LitLong:Edinburgh we have used textmining and georeferencing on extremely large and diverse collections of digitised texts made available to us by – among others – the British Library, the National Library of Scotland and the Hathi Trust. We searched these collections for texts which, in the range and frequency of their use of place-names, showed all the signs of making Edinburgh their setting. A combination of algorithmic and manual curation then filtered these texts for ones that matched our criteria, giving us a dataset of hundreds of narrative works which explore the city or use it as a backdrop for their action. The Edinburgh places mentioned in these texts were then georeferenced, using a bespoke gazetteer created to register the very different ways in which place might be named in fiction or memoir.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="What is its scope?">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+LitLong:Edinburgh isn’t comprehensive. We needed to use freely available corpora of digitised texts that could be textmined relatively easily. We have also been constrained by copyright restrictions, and by the difficulties that Optical Character Recognition and current textmining technologies have with poetry. We have also been confined, sadly, to works in English and, to some extent, Scots – we have not been able to adapt our language-processing tools to Gaelic. We have been very lucky to have the support of a number of contemporary Edinburgh-centric writers and their publishers, so in addition to the out-of-copyright texts we’ve used we’ve been able to include a sample of more recent writing. So our methods have given us a dataset of around 550 published works, and more than 47,000 mentions of over 1,600 different places.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="You’ve missed one…">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Creating a gazetteer to recognise and plot the literary uses of placenames is a tricky business. Our ordinary ways of using proper names to pin down place are pretty various, and it isn’t easy to capture all the ways in which writers of narrative use location names in a single list. What’s more, some places have had lots of different names and variant spellings over the centuries – Edinburgh itself can be Auld Reekie, Edenborough, Edinborrow, and Embra. So there are inevitably some names that slip through the net, but which you might find in an extract associated with another place entirely. If so, let us know!
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Hang on – this text is garbled!">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Time for an unsurprising confession: we haven’t read every extract in our database. Even worse: we’ve done that on purpose. We wanted to see how the computer would read our texts, and to be able to explore the results of their reading. What’s more, we’ve been reliant throughout on books that have been digitised automatically, rather than being transcribed and encoded by humans. So sometimes you’re going to encounter strings of characters that veer in and out of sense around a place-name mention, though we’ve tried to filter out the most scrambled texts. Try saying any gobbledygook out loud, to see what it does to the sentence it’s in. Imagine it’s another verse in the Loch Ness Monster’s Song.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="You idiots – this extract is mapped onto the wrong place!">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Nobody’s georeferencing is perfect. Edinburgh has the annoying habit of sharing placenames – Haymarket, George Square, the High Street, for example – with lots of other places worldwide. So some of our extracts may well not be referring to an Edinburgh location at all, despite what our map claims. There are also some Edinburgh places – like the Parliament – that have moved over time, and which our gazetteer might therefore have put on the wrong spot. You could call these embarrassing mistakes. But we prefer to think of them as wormholes – points where the literary topography of contemporary Edinburgh touches other times or places through the coincidence of a name. They make our maps a bit like a grand and literary game of snakes and ladders, which doesn’t seem entirely like a bad thing. Feel free to report such errors to us using the contact form. We might be reluctant to shut the wormholes down, though!
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="The Phantom Menace">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Proper names are tricky. Not only are there common nouns that can also function as names – butcher, baker, though not candlestick-maker – but place and personal names are often linguistically identical. For example, the footballer-turned-manager Justin Edinburgh would give us a problem if he turned up in one of our books (our software would no doubt place him somewhere near the city limits). There are also plenty of titled folk in the books we’ve mined – and since titles are so often geolocated (all those earls and lairds of here and there), we’ve sometimes misread a person as a place and thus generated a phantom entry in our database. Feel free to let us know if you find one of these, though an Edinburgh purged of its ghosts wouldn’t really be worthy of its own name.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1000" misplaced="YES" image="all_logos_image" translatesAutoresizingMaskIntoConstraints="NO" id="6pY-BF-QOZ">
+                                <rect key="frame" x="0.0" y="370" width="320" height="110"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MPP-bh-jJg" firstAttribute="top" secondItem="6pY-BF-QOZ" secondAttribute="bottom" id="5Vj-T8-Kcb"/>
+                            <constraint firstItem="qfc-gd-Sa3" firstAttribute="trailing" secondItem="1i6-eV-eyE" secondAttribute="trailingMargin" id="CuD-X9-oy7"/>
+                            <constraint firstItem="qfc-gd-Sa3" firstAttribute="top" secondItem="jOY-Pp-9IU" secondAttribute="bottom" constant="8" id="DOz-Xl-Cd6"/>
+                            <constraint firstItem="qfc-gd-Sa3" firstAttribute="leading" secondItem="1i6-eV-eyE" secondAttribute="leadingMargin" id="ICy-ff-PcM"/>
+                            <constraint firstItem="6pY-BF-QOZ" firstAttribute="leading" secondItem="1i6-eV-eyE" secondAttribute="leadingMargin" constant="-16" id="S5l-53-REp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6pY-BF-QOZ" secondAttribute="trailing" constant="-16" id="phb-Qd-yDT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5qQ-wH-VcL">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="RM7-pr-KjY"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="barButton" destination="RM7-pr-KjY" id="Q4l-9L-OcK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IRG-GP-0ZW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="575"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tSu-NV-Qi8">
+            <objects>
+                <viewController id="GYs-vb-rBH" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MEN-zg-tk5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ydw-y3-YU8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y3a-hz-6B1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGO-qU-wol">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Jzp-GB-hPo"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Current Location" id="ySc-ve-fHY">
+                                        <connections>
+                                            <action selector="zoomToCurrentLocation:" destination="GYs-vb-rBH" id="MvZ-TX-tnb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2N4-2d-e46"/>
+                                    <barButtonItem style="plain" id="fEB-eS-HQ1">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cbu-Me-w1U">
+                                            <rect key="frame" x="147" y="7" width="127" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Edinburgh centre">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="goToOtherPlace:" destination="GYs-vb-rBH" eventType="touchUpInside" id="DxA-Te-9eZ"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efq-Kn-xKu">
+                                <rect key="frame" x="-6" y="298" width="326" height="138"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JyC-Up-9Oh">
+                                <rect key="frame" x="95" y="401" width="209" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setMapType:" destination="GYs-vb-rBH" eventType="valueChanged" id="OJc-ho-4O8"/>
+                                </connections>
+                            </segmentedControl>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Eix-p0-4Zp">
+                                <rect key="frame" x="141" y="253" width="39" height="37"/>
+                            </pageControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwA-fg-PS7" userLabel="snippet_text_field">
+                                <rect key="frame" x="0.0" y="144" width="320" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">...and a sample of the revelant text on your location will appear here. Just tap the info (i) button on the location popup to get going.
+
+When you've chosen your location, tap left and right to jump between extracts.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Tap map pins or 'Currrent Location' to start." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUH-Og-YRF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="25"/>
+                                <color key="backgroundColor" red="0.83137254901960789" green="0.93725490196078431" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="The title, author, year and direct link to the full text" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCS-5f-fm8">
+                                <rect key="frame" x="0.0" y="89" width="320" height="25"/>
+                                <color key="backgroundColor" red="0.83137254901960789" green="0.93725490196078431" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Placename" translatesAutoresizingMaskIntoConstraints="NO" id="TlE-EU-dcN">
+                                <rect key="frame" x="48" y="-64" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="will appear" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="231-pn-SxG">
+                                <rect key="frame" x="0.0" y="114" width="71" height="25"/>
+                                <color key="backgroundColor" red="0.83137254901960789" green="0.93725490196078431" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="here..." translatesAutoresizingMaskIntoConstraints="NO" id="4Ma-Ue-q4s">
+                                <rect key="frame" x="71" y="114" width="249" height="25"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.93725490199999995" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-fj-5pC">
+                                <rect key="frame" x="282" y="264" width="38" height="30"/>
+                                <state key="normal" image="arrow_right"/>
+                                <connections>
+                                    <action selector="next_snippet_pressed:" destination="GYs-vb-rBH" eventType="touchUpInside" id="dnM-Cc-AfF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTU-mq-bq1">
+                                <rect key="frame" x="0.0" y="264" width="38" height="30"/>
+                                <state key="normal" image="arrow_left">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="previous_snippet_pressed:" destination="GYs-vb-rBH" eventType="touchUpInside" id="3g0-o9-SqO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ydw-y3-YU8" firstAttribute="top" secondItem="SGO-qU-wol" secondAttribute="bottom" id="2tq-DG-Mv5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Efq-Kn-xKu" secondAttribute="trailing" constant="-16" id="3fV-NI-0Gr"/>
+                            <constraint firstItem="ydw-y3-YU8" firstAttribute="top" secondItem="SGO-qU-wol" secondAttribute="bottom" id="4f5-tI-Inn"/>
+                            <constraint firstItem="SGO-qU-wol" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-16" id="5bD-wZ-B83"/>
+                            <constraint firstItem="SCS-5f-fm8" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-16" id="60A-ih-VjS"/>
+                            <constraint firstItem="JyC-Up-9Oh" firstAttribute="trailing" secondItem="Y3a-hz-6B1" secondAttribute="trailingMargin" id="Dhc-IG-1Z6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NwA-fg-PS7" secondAttribute="trailing" constant="-16" id="F05-8r-PlU"/>
+                            <constraint firstItem="SGO-qU-wol" firstAttribute="top" secondItem="JyC-Up-9Oh" secondAttribute="bottom" constant="7" id="FZM-7c-Lgr"/>
+                            <constraint firstItem="kUH-Og-YRF" firstAttribute="top" secondItem="MEN-zg-tk5" secondAttribute="bottom" id="GZ3-ZX-PrV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Ma-Ue-q4s" secondAttribute="trailing" constant="-16" id="IDh-B6-MHB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kUH-Og-YRF" secondAttribute="trailing" constant="-16" id="MFq-nh-7QQ"/>
+                            <constraint firstItem="Efq-Kn-xKu" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-22" id="P2k-fq-0TI"/>
+                            <constraint firstItem="kUH-Og-YRF" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-16" id="SBo-jp-ZXo"/>
+                            <constraint firstItem="Efq-Kn-xKu" firstAttribute="top" secondItem="BTU-mq-bq1" secondAttribute="bottom" constant="4" id="dpR-BF-zg2"/>
+                            <constraint firstItem="4Ma-Ue-q4s" firstAttribute="leading" secondItem="231-pn-SxG" secondAttribute="trailing" id="hXP-L3-2uC"/>
+                            <constraint firstItem="SGO-qU-wol" firstAttribute="top" secondItem="Efq-Kn-xKu" secondAttribute="bottom" id="jLz-Ic-pwr"/>
+                            <constraint firstItem="NwA-fg-PS7" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-16" id="kJv-rG-70W"/>
+                            <constraint firstItem="BTU-mq-bq1" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-16" id="mOm-s6-XfG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J2G-fj-5pC" secondAttribute="trailing" constant="-16" id="ozo-Rm-Tqb"/>
+                            <constraint firstItem="ydw-y3-YU8" firstAttribute="top" secondItem="SGO-qU-wol" secondAttribute="bottom" id="p1e-g2-iAY"/>
+                            <constraint firstItem="231-pn-SxG" firstAttribute="leading" secondItem="Y3a-hz-6B1" secondAttribute="leadingMargin" constant="-16" id="qpw-u4-Glo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SCS-5f-fm8" secondAttribute="trailing" constant="-16" id="uWy-bY-VB7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SGO-qU-wol" secondAttribute="trailing" constant="-16" id="z6D-qj-sI0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H9b-Dy-SXX">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="2Wp-YV-x63"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="author_text" destination="SCS-5f-fm8" id="fQG-k2-eJ1"/>
+                        <outlet property="barButton" destination="2Wp-YV-x63" id="nBr-Ok-mxQ"/>
+                        <outlet property="mapView" destination="Efq-Kn-xKu" id="JHf-W1-5tY"/>
+                        <outlet property="next_snippt_button" destination="J2G-fj-5pC" id="WTS-ha-FnU"/>
+                        <outlet property="searchButton" destination="cbu-Me-w1U" id="giz-9Y-1eE"/>
+                        <outlet property="snippet_text" destination="NwA-fg-PS7" id="RYB-iD-NW7"/>
+                        <outlet property="text_view_nav_menu" destination="H9b-Dy-SXX" id="wmM-tM-AJj"/>
+                        <outlet property="title_text" destination="kUH-Og-YRF" id="nrP-z2-1oJ"/>
+                        <outlet property="url_text" destination="4Ma-Ue-q4s" id="AJ5-iq-Cu3"/>
+                        <outlet property="year_text" destination="231-pn-SxG" id="ZtJ-95-mmM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQg-At-8pP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-1909"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="yL0-f2-ryV">
+            <objects>
+                <tableViewController id="YSV-Nh-cy1" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fyg-pb-7Hs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nG7-6Q-ioU">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG7-6Q-ioU" id="m3g-fh-rXx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YSV-Nh-cy1" id="25d-KD-Pfi"/>
+                            <outlet property="delegate" destination="YSV-Nh-cy1" id="Ipe-Pr-oJT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="5sv-5I-z3X"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFa-ZJ-P7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="425"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R5r-Xt-9et">
+            <objects>
+                <navigationController id="VgS-xQ-imX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="laL-eT-lGx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YSV-Nh-cy1" kind="relationship" relationship="rootViewController" id="RTP-Gl-Jqu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icv-ZC-QNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="-407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="all_logos_image" width="1342" height="396"/>
+        <image name="arrow_left" width="28" height="25"/>
+        <image name="arrow_right" width="28" height="25"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ymx-lb-hwt"/>
+    </inferredMetricsTieBreakers>
 </document>

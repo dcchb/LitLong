@@ -1,0 +1,137 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green116\blue0;\red14\green14\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+\
+Junk code:\
+\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0     \cf2 /*\
+    //from here\
+    \
+    \
+    NSString *file_contents = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"all_data_lat_long_edin_area_nums" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];\
+    //NSLog(@"%@", file_contents);\
+    //to here\
+    */\cf0 \
+    \
+    \cf2 //NSString *file_contents = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"lat_long_edin_area_cleaned.txt" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];\cf0 \
+    \cf2 //NSLog(@"%@", file_contents);\cf0 \
+    \
+    \cf2 //Try Regular expressions\cf0 \
+    \cf2 /*\
+    //parse the lat long data using regexp\
+    NSError *regexError = nil;\
+    //^([-+]?[0-9]*\\.?[0-9]+),([-+]?[0-9]*\\.?[0-9]+),\\d,\\"(.*)\\"$\
+    //([-+]?[0-9]*\\.?[0-9]+),([-+]?[0-9]*\\.?[0-9]+),(\\d),(\\"(.*)\\")$\
+    //([-+]?[0-9]*\\.?[0-9]+),([-+]?[0-9]*\\.?[0-9]+),(\\d),(\\"(.*)\\")\
+    NSRegularExpression* regex =[NSRegularExpression regularExpressionWithPattern:@"([-+]?[0-9]*\\\\.?[0-9]+),([-+]?[0-9]*\\\\.?[0-9]+),(\\\\d),(\\"(.*)\\")"\
+\
+    //NSRegularExpression* regex =[NSRegularExpression regularExpressionWithPattern:@"([-+]?[0-9]*\\\\.?[0-9]+),([-+]?[0-9]*\\\\.?[0-9]+),(\\\\d),(\\"(.*)\\")$"\
+    options:0\
+    error:&regexError];\
+    //    options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators\
+//55.5760712292795,-2.51552644637218,1,"Roxburgh Newtown"\
+    if (regexError)\
+    \{\
+        NSLog(@"Regex creation failed with error: %@", [regexError description]);\
+        //return nil;\
+    \}\
+    \
+    //options:NSMatchingWithoutAnchoringBounds\
+    NSArray* matches = [regex matchesInString:file_contents\
+                                      options:0\
+                                        range:NSMakeRange(0, file_contents.length)];\
+    NSUInteger matchCount = [matches count];*/\cf0 \
+    
+\f0\fs24 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0   ///////////\
+\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0     \cf2 /*\
+    NSString *snip_file_contents = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"all_data_lat_long_edin_area_sniptext.csv" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];\
+    NSArray *snipcontentArray = [snip_file_contents componentsSeparatedByString:@"\\n"];\
+    NSLog(@"%lu", (unsigned long)snipcontentArray.count);\
+    */\cf0 \
+     \
+    \cf2 /*\
+    //Lets try CHCSVParser (from {\field{\*\fldinst{HYPERLINK "https://github.com/davedelong/CHCSVParser)"}}{\fldrslt \cf3 https://github.com/davedelong/CHCSVParser)}}\
+    CHCSVParser *parser=[[CHCSVParser alloc] initWithContentsOfCSVFile:[NSHomeDirectory() stringByAppendingPathComponent:@"all_data_lat_long_edin_area_v2.csv"] delimiter:','];\
+    [parser parse];\
+    //- See more at: {\field{\*\fldinst{HYPERLINK "http://www.theappguruz.com/tutorial/ios-csv-parser-writer/#sthash.pjL9RD4t.dpuf"}}{\fldrslt \cf3 http://www.theappguruz.com/tutorial/ios-csv-parser-writer/#sthash.pjL9RD4t.dpuf}}\
+    //- See more at: {\field{\*\fldinst{HYPERLINK "http://www.theappguruz.com/tutorial/ios-csv-parser-writer/#sthash.pjL9RD4t.dpuf"}}{\fldrslt \cf3 http://www.theappguruz.com/tutorial/ios-csv-parser-writer/#sthash.pjL9RD4t.dpuf}}\
+    \
+     */\cf0 \
+    \cf2 /*\
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"all_data_lat_long_edin_area_v2.csv" ofType:@"csv"];\
+    NSArray *rows = [NSArray arrayWithContentsOfCSVFile:path options:0 delimiter:','];\
+    \
+    for (int i = 0; i < [rows count]; i++) \{\
+        [profiles addObject:[[TERProfile alloc] initWithCSVArray:[rows objectAtIndex:i]]];\
+    \}\
+    \
+    NSLog(@"%lu", (unsigned long)[rows count]);\
+    */\cf0 \
+     \
+    \cf2 /*\
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"all_data_lat_long_edin_area_v2.csv" ofType:@"csv"];\
+    \
+    NSError *error = nil;\
+    NSArray *rows = [NSArray arrayWithContentsOfCSVFile:path];\
+    if (rows == nil) \{\
+        //something went wrong; log the error and exit\
+        NSLog(@"error parsing file: %@", error);\
+        return;\
+    \}\
+    NSInputStream *stream = [NSInputStream inputStreamWithFileAtPath:path];\
+    CHCSVParser * p = [[CHCSVParser alloc] initWithInputStream:stream usedEncoding:&encoding delimiter:','];\
+    [p setRecognizesBackslashesAsEscapes:YES];\
+    [p setSanitizesFields:YES];\
+    \
+    NSString *file = @(__FILE__);\
+    file = [[file stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"all_data_lat_long_edin_area_v2.csv"];\
+    \
+    NSLog(@"Beginning...");\
+    NSStringEncoding encoding = 0;\
+    NSInputStream *stream = [NSInputStream inputStreamWithFileAtPath:file];\
+    CHCSVParser * p = [[CHCSVParser alloc] initWithInputStream:stream usedEncoding:&encoding delimiter:','];\
+    [p setRecognizesBackslashesAsEscapes:YES];\
+    [p setSanitizesFields:YES];\
+    \
+    NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];\
+    [p parse];\
+    NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];\
+    \
+    NSLog(@"raw difference: %f", (end-start));\
+     */\cf0 \
+    \
+    \cf2 /*\
+    NSLog(@"File contents size: ");\
+    NSLog(@"%lu", (unsigned long)file_contents.length);\
+    NSLog(@"MatchCount: ");\
+    NSLog(@"%lu", (unsigned long)matchCount);\
+    NSLog(@"size of Matches: ");\
+    NSLog(@"%lu", sizeof(matches));\
+    NSLog(@"Matches result: ");\
+    NSLog(@"%@", matches);\
+    NSLog(@"%@",contentArray[0]);\
+     */\cf0 \
+\
+    \cf2 //NSLog(@"group1: %@", [file_contents substringWithRange:[matches rangeAtIndex:1]]);\cf0 \
+\
+    \cf2 /*\
+    //put a point on the map\
+    MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];\
+    myAnnotation.coordinate = CLLocationCoordinate2DMake(55.9531, -3.1889);\
+    myAnnotation.title = @"Treasure Island";\
+    myAnnotation.subtitle = @"Robert Louis Stevenson";\
+    [self.mapView addAnnotation:myAnnotation];\
+    */}
